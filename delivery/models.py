@@ -1,0 +1,32 @@
+from django.db import models
+
+# Create your models here.
+class users(models.Model):
+    username = models.CharField(max_length=150)
+    fullname = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=150)
+    security_question_1 = models.CharField(max_length=500, null=True)
+    answer_1 = models.CharField(max_length=500, null=True)
+    security_question_2 = models.CharField(max_length=500, null=True)
+    answer_2 = models.CharField(max_length=500, null=True)
+    user_type = models.CharField(max_length=100)
+
+class orders(models.Model):
+    trackingid = models.CharField(max_length=100)
+    username = models.CharField(max_length=150)
+    orderdate = models.DateField()
+    destination_address = models.CharField(max_length=500)
+    source_address = models.CharField(max_length=500)
+    delivery_service = models.CharField(max_length=200)
+    package_weight = models.FloatField()
+
+
+class deliveries(models.Model):
+    trackingid = models.CharField(max_length=100)
+    driver = models.CharField(max_length=150)
+    status = models.CharField(max_length=50)
+    current_city = models.CharField(max_length=100, null=True)
+    current_state = models.CharField(max_length=100, null=True)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
