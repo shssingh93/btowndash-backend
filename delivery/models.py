@@ -19,7 +19,7 @@ class orders(models.Model):
     destination_address = models.CharField(max_length=500)
     source_address = models.CharField(max_length=500)
     delivery_service = models.CharField(max_length=200)
-    package_weight = models.FloatField()
+    package_weight = models.CharField(max_length=200)
 
 
 class deliveries(models.Model):
